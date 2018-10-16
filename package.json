@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/LYunZhi/psqltest#readme",
   "dependencies": {
+    "knex": "^0.15.2",
     "pg": "^7.5.0"
   }
 }
