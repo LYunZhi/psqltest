@@ -32,7 +32,7 @@ const output = (obj) => {
 }
 
 
-knex.select().from('famous_people').asCallback((err, result) => {
+knex.select().from('famous_people').where('first_name', process.argv[2]).orWhere('last_name', process.argv[2]).asCallback((err, result) => {
   if(err) {
     return console.log(err)
   }
