@@ -10,6 +10,13 @@ const knex = require('knex')({
   }
 });
 
-const data = process.argv(2)
+const data = process.argv.slice(2)
 
-knex.insert
+
+knex('famous_people').insert({first_name: data[0], last_name: data[1], birthdate: data[2]}).asCallback((err) => {
+  if (err) {
+    console.log(err)
+  }
+  console.log('Record inserted')
+  knex.destroy()
+})
